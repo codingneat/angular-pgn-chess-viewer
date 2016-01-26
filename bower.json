@@ -1,0 +1,23 @@
+{
+  "name": "pgn-chess-viewer",
+  "version": "0.0.1",
+  "description": "chess viewer",
+  "main": "index.js",
+  "authors": [
+    "coding.neat"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "chess.js": "~0.9.3",
+    "chessboard.js": "~1.0.0",
+    "angular": "~1.4.9",
+    "angular-chessboard": "theborakompanioni/angular-chessboard#~0.0.7"
+  }
+}
