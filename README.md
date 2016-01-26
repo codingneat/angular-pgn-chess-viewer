@@ -1,4 +1,3 @@
-# pgn-chess-viewer
-PGN Chess Viewer
-=======
+
 # angular-pgn-chess-viewer
+Angular PGN Chess Viewe
