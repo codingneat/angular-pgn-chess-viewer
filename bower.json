@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "chess.js": "~0.9.3",
-    "chessboard.js": "~1.0.0",
+    "chessboard.js": "theborakompanioni/chessboardjs#1.0.0",
     "angular": "~1.4.9",
     "angular-chessboard": "theborakompanioni/angular-chessboard#~0.0.7"
   }

@@ -1,16 +1,22 @@
-
-
-
-/* white square */
-.white-1e1d7 {
-  background-color: #ececec;
-  color: #b58863;
+textarea {
+	width:60%;
+	min-height:100px;
+	margin-top:20px;
 }
 
-/* black square */
+a {
+	color: #222;
+	text-decoration:none;
+}
+
+.white-1e1d7 {
+  	background-color: #ececec;
+  	color: #b58863;
+}
+
 .black-3c85d {
-  background-color: #95A5A6;
-  color: #f0d9b5;
+  	background-color: #95A5A6;
+  	color: #f0d9b5;
 }
 
 #game {
@@ -31,18 +37,6 @@
 	width:40%;
 	float:right;
 	margin-top:30px;
-}
-
-textarea {
-	width:60%;
-	min-height:100px;
-	margin-top:20px;
-
-}
-
-a {
-	 color: #222;
-	 text-decoration:none;
 }
 
 .blue{
