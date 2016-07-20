@@ -33,6 +33,7 @@ a {
 	overflow:hidden;
 	overflow-y:auto;
 }
+
 #text{
 	width:40%;
 	float:right;
@@ -40,6 +41,24 @@ a {
 }
 
 .blue{
-	background-color:blue;
+	background-color:#4183D7;
+}
 
+.blue a{
+	color: #fff;
+}
+
+.container {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+body {
+    color: #333;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
 }

@@ -19,52 +19,55 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <div class="container">
 
-        <div  id='game'>
-            <nywton-chessboard board="boardA"  data-nywton-chessboard-autoresize data-draggable="false"></nywton-chessboard>
-
-            <div>
-                <span id="white">{{vm.data.white}}</span>
-                <span id="whiteElo">{{vm.data.whiteElo}}</span> -
-                <span id="black">{{vm.data.black}}</span> 
-                <span id="blackElo">{{vm.data.blackElo}}</span> 
-                <br> 
-                <span id="event"></span>  
-                <span id="site">{{vm.data.site}}</span>  
-                <span id="round">{{vm.data.round}}</span>  
-                <span id="date"></span>{{vm.data.date}}
+            <div id="header">
+                <h1>ANGULAR PGN CHESS VIEWER</h1>
             </div>
-        </div>
 
+            <div  id='game'>
+                <nywton-chessboard board="boardA"  data-nywton-chessboard-autoresize data-draggable="false"></nywton-chessboard>
 
-        <div id='text'>
-            <div id='notation'>
-               <div style="text-align:center">
-                   <div ng-class="{blue: $index == vm.pos-1}" style="width:50%;display:inline-block;margin:5px 0" ng-repeat="not in vm.notation track by $index">
-                     <a href="javascript:void(0)" class="move"  ng-click="vm.move($index+1)">{{not}}</a>
+                <div>
+                    <span id="white">{{vm.data.white}}</span>
+                    <span id="whiteElo">{{vm.data.whiteElo}}</span> -
+                    <span id="black">{{vm.data.black}}</span> 
+                    <span id="blackElo">{{vm.data.blackElo}}</span> 
+                    <br> 
+                    <span id="event"></span>  
+                    <span id="site">{{vm.data.site}}</span>  
+                    <span id="round">{{vm.data.round}}</span>  
+                    <span id="date"></span>{{vm.data.date}}
+                </div>
+            </div>
+
+            <div id='text'>
+                <div id='notation'>
+                   <div style="text-align:center">
+                       <div ng-class="{blue: $index == vm.pos-1}" style="width:50%;display:inline-block;margin:5px 0" ng-repeat="not in vm.notation track by $index">
+                         <a href="javascript:void(0)" class="move"  ng-click="vm.move($index+1)">{{not}}</a>
+                       </div>
                    </div>
-               </div>
+                </div>
+
+                <div id='control'>
+                    <button ng-click="vm.start()">Start</button>     
+                    <button ng-click="vm.prev()">Prev</button> 
+                    <button ng-click="vm.next()">Next</button>
+                    <button ng-click="vm.end()">End</button> 
+                </div>
+
+                <textarea ng-model="vm.text"></textarea>
+                <br>
+                <button ng-click="vm.save(vm.text)">Save</button> 
+                <br>
+                <br>
             </div>
-
-            <div id='control'>
-                <button ng-click="vm.start()">Start</button>     
-                <button ng-click="vm.prev()">Prev</button> 
-                <button ng-click="vm.next()">Next</button>
-                <button ng-click="vm.end()">End</button> 
-            </div>
-
-            <textarea ng-model="vm.text"></textarea>
-            <br>
-            <button ng-click="vm.save(vm.text)">Save</button> 
-            <br>
-            <br>
-
-
         </div>
 
         <script src="https://code.jquery.com/jquery-git2.min.js"></script>
-        <script src="bower_components/chess.js/chess.js"></script> 
         <script src="bower_components/chessboard.js/src/js/chessboard.js"></script>
+        <script src="bower_components/chess.js/chess.js"></script> 
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-chessboard/src/angular-chessboard.js"></script>
         <script src="js/util.js"></script>
