@@ -51,7 +51,7 @@
 
         vm.start = function(){
             vm.pos = 0;
-            game.reset();
+            game.load(vm.data.fen);
             $scope.boardA.position(game.fen());
         }
 
@@ -72,7 +72,7 @@
                 $scope.boardA.position(game.fen());
 
             }else if(p<vm.pos){
-                game.reset();
+                game.load(vm.data.fen);
                 vm.pos = 0;
                 while (vm.pos < p) {
                     vm.pos++;
@@ -89,12 +89,15 @@
             
             var chess = new Chess();
             var obj = parsePgn(t);
-            chess.load_pgn(obj.pgn);
+            chess.load_pgn(t); //have to use t, or else chess.history() got no data
             gameData = chess.history();
             chess.reset();
             game = chess;
             vm.notation = obj.pgn.split(' ');
             vm.data = layout(obj);
+
+            game.load(vm.data.fen);
+            $scope.boardA.position(game.fen());
         }
     }
 })();

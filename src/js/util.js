@@ -32,7 +32,7 @@ function layout(obj) {
 	var array = obj.data;
 	var pgn = obj.pgn.split(' ');
 	var ob = {};
-
+	var fenExist = false;
 
 	for(var i = 0;i<array.length;i++){
 		if(array[i].substr(0,6)==='White '){
@@ -54,13 +54,21 @@ function layout(obj) {
 			ob.event = parseData(array[i]);
 		}
 		if(array[i].substr(0,5)==='Round'){
-			ob.round = 'ronda:'+parseData(array[i]);
+			ob.round = 'Round: '+parseData(array[i]);
 		}
 		if(array[i].substr(0,4)==='Date'){
 			ob.date = parseData(array[i]);
 		}
+		if(array[i].substr(0,3)==='FEN'){
+			ob.fen =  parseData(array[i]);
+			fenExist = true;
+		}
+		        
 	}
 
+	//if FEN doesn't exist, use default position
+	if(!fenExist)
+		ob.fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 
 	return ob;
 
